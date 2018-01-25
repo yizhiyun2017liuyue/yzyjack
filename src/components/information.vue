@@ -1,7 +1,7 @@
 <template>
     <div>
 	    <img src="/static/images/logo.png">
-   	    <router-link to="/aboutShow">下一个页面</router-link>
+   	    <router-link to="/infordraghandle">下一个页面</router-link>
 	</div>
 </template>
 

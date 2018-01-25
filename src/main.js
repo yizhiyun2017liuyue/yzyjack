@@ -7,6 +7,7 @@ import router from './router'
 require('../static/css/reset.css')
 require('../static/js/jquery.min.js')
 require('../static/js/flexible.js')
+require('../static/js/touch.min.js')
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */
