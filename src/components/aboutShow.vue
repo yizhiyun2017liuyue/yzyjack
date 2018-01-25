@@ -1,5 +1,5 @@
 <template>
-    <h3>第三四页面</h3>
+   <p @click='ceshi'>哈哈</p>
 </template>
 
 <script>
@@ -9,6 +9,13 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+    methods:{
+  	ceshi:function(){
+  		console.log(window.screen)
+  		document.write(window.screen.height-$(document).height())
+  		$("#app").css("min-height",$(document).width()/0.56)
+  	}
   }
 }
 </script>
