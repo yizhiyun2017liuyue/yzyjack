@@ -1,2 +1,41 @@
 body{color: yellow}
-canvas{ background:pink;}
+.heart{width:8.453333rem;height:7.32rem;position:absolute;left:0.773333rem;top:4.853333rem;}
+.heart img{width:100%;height:100%;}
+#btn{
+	width:4.0rem;
+	height:1.066667rem;
+	line-height:1.066667rem;
+	border-radius:0.053333rem;
+	text-align:center;
+	color:white;
+	background:#d50211;
+	font-size:0.4rem;
+	position: absolute; 
+	bottom:2.0rem;
+	left:3rem;
+	z-index:20;  
+	 /*调用动画效果*/  
+	-webkit-animation-name: fadeIn; /*动画名称*/  
+	-webkit-animation-duration: 5s; /*动画持续时间*/  
+	/*-webkit-animation-iteration-count: 1; /*动画次数  */*/
+	-webkit-animation-delay: 2s; /*延迟时间*/  
+}
+@-webkit-keyframes fadeIn {  
+    0% {  
+    	opacity: 0; /*初始状态 透明度为0*/  
+    }  
+    20%{  
+        opacity: .2;  
+    }  
+    50% {  
+        opacity: .5; /*中间状态 透明度为0.5*/  
+    }  
+    70%{  
+        opacity: .7;  
+    }  
+    100% {  
+        opacity: 1; /*结尾状态 透明度为1*/  
+    }  
+}  
+.whiteDay{width:2.8rem;height:1.28rem;position:absolute;top:12.84rem;left:3.6rem;}
+canvas{ background:#fff;}

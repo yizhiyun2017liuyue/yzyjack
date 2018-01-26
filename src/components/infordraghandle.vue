@@ -1,8 +1,11 @@
 <template>
-    <div>
-    	<p>测试</p>
-   	    <router-link to="/aboutShow">第二个页面</router-link>
-   	    <canvas id="canvas" width="300" height="300"></canvas>
+    <div id="pageTwo">
+      <div class="heart">
+        <img src="../../static/images/ENTER.png" alt="">
+        <!-- <canvas id="canvas" width="400" height="400"></canvas> -->
+      </div>
+      <img src="../../static/images/font_2.png" alt="" class="whiteDay">
+   	  <router-link to="/aboutShow" id="btn">完成</router-link>
 	</div>
 </template>
 
@@ -10,7 +13,7 @@
 export default {
   	name: 'infordraghandle',
   	mounted(){
-  		var canvas = document.getElementById("canvas");
+  		  var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
         ctx.lineWidth = 6;
         canvas.addEventListener('touchstart',function(event){   //触摸点按下事件
