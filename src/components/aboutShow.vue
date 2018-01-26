@@ -1,5 +1,8 @@
 <template>
-   <p @click='ceshi'>哈哈</p>
+   <!-- 页面内容 -->
+   <div class="aboutShow-small-component">
+     
+   </div>
 </template>
 
 <script>
