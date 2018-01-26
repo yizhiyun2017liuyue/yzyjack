@@ -5,13 +5,13 @@ import information from './App'
 import router from './router'
 
 require('../static/css/reset.css')
-require('../static/js/jquery.min.js')
-require('../static/js/flexible.js')
-require('../static/js/touch.min.js')
-
+ 
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
+  beforeCreate:function(){
+  	$(".app-bg").height(700);
+  },
   el: '#app',
   router,
   components: { information },
