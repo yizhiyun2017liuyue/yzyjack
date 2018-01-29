@@ -50,7 +50,6 @@
       }  
       scale = 1 / dpr;  
     } 
-
     docEl.setAttribute('data-dpr', dpr);
     if (!metaEl) {
         metaEl = doc.createElement('meta');

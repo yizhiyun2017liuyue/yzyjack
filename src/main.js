@@ -10,9 +10,6 @@ require('../static/css/animate.css')
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
-  beforeCreate:function(){
-  	$(".app-bg").height(700);
-  },
   el: '#app',
   router,
   components: { information },
