@@ -39,29 +39,29 @@
 		      count:0
 		    };
   		},
-	  	mounted() {
-		    var cur = this;
-		    setInterval(timer, 1000);
-		    function timer() {
-		      cur.isClass = true;
-		      cur.count++;
-		      cur.isClass1 = true;
-		      cur.isClass2 = true;
-		      cur.t += 100;
-		      if (cur.t % 3 == 0) {
-		        cur.isClass = false;
-		        // cur.isClass1 = false;
-		        // cur.isClass2 = false;
-		   	  }
-		    }
-		    timer();
+	 //  	mounted() {
+		//     var cur = this;
+		//     setInterval(timer, 1000);
+		//     function timer() {
+		//       cur.isClass = true;
+		//       cur.count++;
+		//       cur.isClass1 = true;
+		//       cur.isClass2 = true;
+		//       cur.t += 100;
+		//       if (cur.t % 3 == 0) {
+		//         cur.isClass = false;
+		//         // cur.isClass1 = false;
+		//         // cur.isClass2 = false;
+		//    	  }
+		//     }
+		//     timer();
 
-		    // var item = {jq:$('.item'),flag:false} 
-	    	// $(".btn").click(function(){
-	    	// 	bomb(item);
-	    	// })
+		//     // var item = {jq:$('.item'),flag:false} 
+	 //    	// $(".btn").click(function(){
+	 //    	// 	bomb(item);
+	 //    	// })
 		   
-		}
+		// }
 	}
 </script>
 

@@ -8,7 +8,7 @@ body{color: yellow}
 .rightBottom{width:0.573333rem;height:0.84rem;position: absolute;right:1.866667rem;bottom:4.253333rem;}
 .pinkTri{width:1.64rem;height:1.64rem;position: absolute;right:1.36rem;top:8.8rem;}
 .whiteDay{width:2.8rem;height:1.28rem;position:absolute;bottom:3.466667rem;left:3.6rem;}
-.heart canvas{ background:#fff;position: absolute;left:2.2rem;top:2.1rem;}
+.heart canvas{ width:4.066667rem;height:2.906667rem;background:#fff;position: absolute;left:2.2rem;top:2.1rem;}
 /*canvas{ background:#fff;position: absolute;top:5.23rem;left:3rem;z-index:20;}*/
 .bottom{width:0.346667rem;height:0.48rem;position: absolute;bottom:0.413333rem;right:4.493333rem;}
 #btn{
