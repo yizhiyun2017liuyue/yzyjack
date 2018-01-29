@@ -2,7 +2,7 @@
     <div id="pageTwo"> 
         <img v-for="item in imgs" :src="item.message" alt="componentShow" :class='item.commonClass' :style="item.itemCss"> 
         <div class="heart animated zoomIn delay3">
-          <img src="/static/images/ENTER.png" alt="">
+          <img src="/static/images/images1/ENTER.png" alt="">
           <canvas id="canvas" width="305" height="218"></canvas>
         </div>
         <!-- <canvas id="canvas" width="305" height="218" class="animated zoomIn delay10"></canvas> -->
