@@ -7,7 +7,7 @@
         </div>
         <!-- <canvas id="canvas" width="305" height="218" class="animated zoomIn delay10"></canvas> -->
         <!-- <input type="button" id="btn" value="完成" v-on:click="save"> -->
-        <router-link to="/aboutShow" id="btn" v-on:click="save">完成</router-link>
+        <router-link to="/aboutShow" id="btn" v-on:click.native="save">完成</router-link>
 	</div>  
 </template>
 
@@ -25,7 +25,8 @@ export default {
             {message:"/static/images/images1/s4.png",commonClass:"leftBottom animated zoomIn delay4",itemClass:""},
             {message:"/static/images/images1/s3.png",commonClass:"rightBottom animated zoomIn delay5",itemClass:""},
             {message:"/static/images/images1/s5.png",commonClass:"bottom animated zoomIn delay6",itemClass:""},
-          ]
+          ],
+          aboutSrc:""
       }
     },
   	mounted(){
@@ -54,7 +55,7 @@ export default {
             // console.log(imageData);
             var mycanvas = document.getElementById("canvas"); 
             var info=window.open('about:blank','image from canvas'); 
-            info.document.write("<img src='"+imageData+"' alt='from canvas'/>"); 
+            info.document.write("<img src='"+imageData+"' alt='from canvas'/>");  
         } 
     }
 }
