@@ -38,6 +38,7 @@ export default {
   created:function(){
         var saveBgSrc = ["/static/images/sudoku/x1_03.png","/static/images/sudoku/x2_03.png","/static/images/sudoku/x3_03.png","/static/images/sudoku/x4_03.png","/static/images/sudoku/x5_03.png"];
         this.aboutBgSrc = saveBgSrc[Math.floor(Math.random() * saveBgSrc.length)];
+        console.log(this.$route)
   },
   data () {
     return {
