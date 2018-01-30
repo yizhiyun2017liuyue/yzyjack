@@ -7,9 +7,10 @@
                 <img v-for="item in aboutimg" :src="item.message" alt="componentShow" :class="item.commonClass" :style="item.itemCss">
             </div>
             <!-- 九宫格 -->
-            <div class="aboutShow-sudoku" :style="{backgroundImage:'url('+aboutBgSrc+')'}">
+            <div class="aboutShow-sudoku animated zoomIn">
+                <img :src="aboutBgSrc" alt="loveLetter" class="about-sudoku-bg">
               <ul>
-                <li v-for="sudoku in sudokuAll" :style="{backgroundImage:'url(/static/images/sudoku/'+sudoku+'.png)'}" @touchstart.stop="clickRotate($event)"></li>
+                <li v-for="sudoku in sudokuAll" :style="sudoku" @touchstart.stop="clickRotate($event)"></li>
               </ul>
             </div>
             <!-- 文字描述 -->
@@ -17,9 +18,12 @@
                 <img :src="aboutShowTextImage" alt="filterShow" class="aboutTextImg" ref="pageThree">
                 <img src="/static/images/sudoku/font4.png" alt="filterShow" class="aboutTextImgFour" ref="pageFour">
                 <img src="/static/images/sudoku/downdrag.png" alt="downdrag" class="aboutDownDrag">
-                <img src="/static/images/sudoku/xiala.png" alt="traloding" class="aboutTraLoding">
-            </div>
-        </div>
+                <div class="aboutTraLodingContent">
+                    <img src="/static/images/sudoku/xiala_s_03.png" alt="traloding" class="aboutTraLoding animated fadeInDown">
+                    <img src="/static/images/sudoku/xiala_x_03.png" alt="traloding" class="aboutTraLodingBottom animated fadeInDown">
+                </div>
+            </div> 
+          </div>
         <!-- 下拉展示 -->
        <div class="pullDownShow">
           
@@ -32,20 +36,31 @@
 export default {
   name: 'aboutShow',
   created:function(){
-        var saveBgSrc = ["/static/images/sudoku/x_03.png"];
+        var saveBgSrc = ["/static/images/sudoku/x1_03.png","/static/images/sudoku/x2_03.png","/static/images/sudoku/x3_03.png","/static/images/sudoku/x4_03.png","/static/images/sudoku/x5_03.png"];
         this.aboutBgSrc = saveBgSrc[Math.floor(Math.random() * saveBgSrc.length)];
+        console.log(this.$route)
   },
   data () {
     return {
         aboutimg:[
-            {message:"/static/images/sudoku/mo1.png",commonClass:"animated bounceInLeft",itemCss:"position:absolute;width:1.36rem;height:3.066667rem;left:0rem;top:56.3%;animation-delay:0.8s"},
-            {message:"/static/images/sudoku/mo2.png",commonClass:"animated bounceInRight",itemCss:"position:absolute;width:1.066667rem;height:1.533333rem;left:8.906667rem;top:20.89%;animation-delay:0.8s"},
-            {message:"/static/images/sudoku/blue_heart.png",commonClass:"animated bounceInRight",itemCss:"position:absolute;width:0.973333rem;height:0.853333rem;left:9.2rem;top:45.19%;animation-delay:1s"},
-            {message:"/static/images/sudoku/white_heart.png",commonClass:"animated bounceInUp",itemCss:"position:absolute;width:1.133333rem;height:0.986667rem;left:1.573333rem;top:87.31%;animation-delay:1s"}
+            {message:"/static/images/sudoku/mo1.png",commonClass:"animated bounceInLeft",itemCss:"position:absolute;width:1.36rem;height:3.066667rem;left:0rem;top:56.3%;animation-delay:0.4s"},
+            {message:"/static/images/sudoku/mo2.png",commonClass:"animated bounceInRight",itemCss:"position:absolute;width:1.066667rem;height:1.533333rem;left:8.906667rem;top:20.89%;animation-delay:0.4s"},
+            {message:"/static/images/sudoku/blue_heart.png",commonClass:"animated bounceInRight",itemCss:"position:absolute;width:0.973333rem;height:0.853333rem;left:9.2rem;top:45.19%;animation-delay:0.6s"},
+            {message:"/static/images/sudoku/white_heart.png",commonClass:"animated bounceInUp",itemCss:"position:absolute;width:1.133333rem;height:0.986667rem;left:1.573333rem;top:87.31%;animation-delay:0.6s"}
         ],
         aboutShowTextImage:"/static/images/sudoku/textClick.png",
         aboutBgSrc:"",
-        sudokuAll:["H5-P34_03","H5-P34_04","H5-P34_05","H5-P34_08","H5-P34_09","H5-P34_07","H5-P34_11","H5-P34_12","H5-P34_10"],
+        sudokuAll:[
+          {backgroundImage:'url(/static/images/sudoku/p1.png)',width:"2.773333rem",height:"4.08rem"},
+          {backgroundImage:'url(/static/images/sudoku/p2.png)',width:"4.066667rem",height:"3.32rem",left:"2.09rem",top:"-4.08rem"},
+          {backgroundImage:'url(/static/images/sudoku/p3.png)',width:"2.746667rem",height:"4.066667rem",top:"-7.4rem",left:"5.44rem"},
+          {backgroundImage:'url(/static/images/sudoku/p4.png)',width:"3.426667rem",height:"3.32rem",top:"-8.2rem",left:"0rem"},
+          {backgroundImage:'url(/static/images/sudoku/p5.png)',width:"2.8rem",height:"4.866667rem",top:"-12.31rem",left:"2.72rem"},
+          {backgroundImage:'url(/static/images/sudoku/p6.png)',width:"3.333333rem",height:"3.32rem",top:"-16.4rem",left:"4.86rem"},
+          {backgroundImage:'url(/static/images/sudoku/p7.png)',width:"2.76rem",height:"4.093333rem",top:"-17.2rem",left:"0rem"},
+          {backgroundImage:'url(/static/images/sudoku/p8.png)',width:"4.066667rem",height:"3.32rem",top:"-20.52rem",left:"2.11rem"},
+          {backgroundImage:'url(/static/images/sudoku/p9.png)',width:"2.746667rem",height:"4.16rem",top:"-24.67rem",left:"5.46rem"},
+        ],
         aboutCount:0,
     }
   },

@@ -66,6 +66,9 @@
 
     function refreshRem(){
         var width = docEl.getBoundingClientRect().width;
+        if(navigator.userAgent.toLowerCase().match(/iPad/i) == "ipad"){
+            width = 600;
+        }
         // if (width / dpr > 750) {
         //     width = 750 * dpr;
         // }

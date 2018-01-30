@@ -7,7 +7,7 @@
           <p id="draw">画下关于你的MR.RIGHT</p>
         </div>
         <!-- <canvas id="canvas" width="305" height="218" class="animated zoomIn delay10"></canvas> -->
-        <input type="button" id="btn" value="完成" v-on:click="save">
+        <div id="btn" @click="save">完成</div>
         <!-- <router-link to="/aboutShow" id="btn">完成</router-link> -->
 	</div>  
 </template>
@@ -26,7 +26,8 @@ export default {
             {message:"/static/images/images1/s4.png",commonClass:"leftBottom animated zoomIn delay4",itemClass:""},
             {message:"/static/images/images1/s3.png",commonClass:"rightBottom animated zoomIn delay5",itemClass:""},
             {message:"/static/images/images1/s5.png",commonClass:"bottom animated zoomIn delay6",itemClass:""},
-          ]
+          ],
+          aboutSrc:""
       }
     },
   	mounted(){
@@ -69,17 +70,7 @@ export default {
     },
     methods:{
         save:function(){
-            //var imageData = canvas.toDataURL("image/png");
-            // console.log(imageData);
-           // var img = $("<img src='"+imageData+"'>");
-            this.$router.push({name: 'aboutShow'});
-            // var info=window.open('about:blank','image from canvas'); 
-            // info.document.write("<img src='"+imageData+"' alt='from canvas'/>"); 
-            saveAsLocalImage();
-            function saveAsLocalImage () { 
-               var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"); 
-               window.location.href=image; 
-            } 
+            this.$router.push({name: 'aboutShow',params:{id:canvas.toDataURL("image/png")}});
         } 
     }
 }

@@ -15,7 +15,7 @@ export default new Router({
       component: information
     },
     {
-      path: '/aboutShow',
+      path: '/aboutShow/',
       name: 'aboutShow',
       component: aboutShow
     },
