@@ -46,7 +46,11 @@ export default {
         }
 
         ctx.lineWidth = 5;
+        document.querySelector('body').addEventListener('touchstart', function (ev) {
+            event.preventDefault();
+        });
         canvas.addEventListener('touchstart',function(event){   //触摸点按下事件
+            // event.preventDefault();
             draw.style.display = "none";
             if (event.targetTouches.length == 1) {         
                 var touch = event.targetTouches[0];

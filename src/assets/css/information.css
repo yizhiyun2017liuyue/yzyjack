@@ -10,6 +10,7 @@
 #ceshi{color: red}
 
 #page1{position:relative;}
+a{text-decoration: none;}
 .content{width:7.8rem;height:7.4rem;position:absolute;top:2.426667rem;left:1.2rem;z-index:20;}
 @keyframes shakeBlack {
       2% {
