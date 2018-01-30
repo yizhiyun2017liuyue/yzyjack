@@ -3,13 +3,15 @@ body{color: yellow}
 .leftTop{width:0.6rem;height:0.533333rem;position:absolute;top:1.533333rem;left:2.666667rem;}
 .rightTop{width:0.213333rem;height:0.16rem;position: absolute;top:2.826667rem;right:1.866667rem;}
 .heart{width:8.453333rem;height:7.32rem;position:absolute;left:0.773333rem;top:3.146667rem;z-index:10;}
-.heart img{width:100%;height:100%;}
+.heart .enter{width:100%;height:100%;}
 .leftBottom{width:0.44rem;height:0.36rem;position:absolute;left:1.306667rem;bottom:3.493333rem;}
 .rightBottom{width:0.573333rem;height:0.84rem;position: absolute;right:1.866667rem;bottom:4.253333rem;}
 .pinkTri{width:1.64rem;height:1.64rem;position: absolute;right:1.36rem;top:8.8rem;}
 .whiteDay{width:2.8rem;height:1.28rem;position:absolute;bottom:3.466667rem;left:3.6rem;}
-.heart canvas{ background:#fff;position: absolute;left:2.2rem;top:2.1rem;}
+/*.heart canvas{ width:4.066667rem;height:2.906667rem;background:#fff;position: absolute;left:2.2rem;top:2.1rem;}*/
 /*canvas{ background:#fff;position: absolute;top:5.23rem;left:3rem;z-index:20;}*/
+.heart canvas{width:6.146667rem;height:5.306667rem;position: absolute;top:1.15rem;left:1.15rem;}
+.heart #draw{font-size:30px;color:#416f99;position: absolute;top:3.2rem;left:2rem;}
 .bottom{width:0.346667rem;height:0.48rem;position: absolute;bottom:0.413333rem;right:4.493333rem;}
 #btn{
 	width:3.2rem;
