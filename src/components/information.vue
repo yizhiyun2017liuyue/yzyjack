@@ -1,14 +1,12 @@
 <template>
     <div id="pageOne">
-    	<!-- <div class="content" :class="{shake:isClass}"> -->
-    	<div class="clipped-box item">
-    	<div class="content" :class="[count > 1 ? {shake:isClass}: animate]">
+    	<!-- <div class="content shakeCir"> -->
+    	<div class="content" :class="[count > 1 ? {shakeCir:isClass}: animate]">
 			<img src="/static/images/images1/3.png" alt="" class="center">
 			<img src="/static/images/images1/blue_d.png" alt="" class="blue" :class="{shake1:isClass1}">
 			<img src="/static/images/images1/red.png" alt="" class="red" :class="{shake2:isClass2}">
     		<img src="/static/images/images1/font_he.png" alt="" class="he">
     		<img src="/static/images/images1/font_2.png" alt="" class="whiteDay">	
-    	</div>
     	</div>
     	 <img v-for="item in imgs" :src="item.message" alt="componentShow" :class='item.commonClass' :style="item.itemCss">   
    	    <router-link to="/infordraghandle" class="btn">马上开启</router-link>
@@ -32,36 +30,30 @@
 		      isClass1: false,
 		      isClass2: false,
     		  animate:"animated zoomIn",
-		      shake: "shake",
+		      shakeCir: "shakeCir",
 		      shake1: "shake1",
 		      shake2: "shake2",
 		      t: 0,
 		      count:0
 		    };
   		},
-	 //  	mounted() {
-		//     var cur = this;
-		//     setInterval(timer, 1000);
-		//     function timer() {
-		//       cur.isClass = true;
-		//       cur.count++;
-		//       cur.isClass1 = true;
-		//       cur.isClass2 = true;
-		//       cur.t += 100;
-		//       if (cur.t % 3 == 0) {
-		//         cur.isClass = false;
-		//         // cur.isClass1 = false;
-		//         // cur.isClass2 = false;
-		//    	  }
-		//     }
-		//     timer();
-
-		//     // var item = {jq:$('.item'),flag:false} 
-	 //    	// $(".btn").click(function(){
-	 //    	// 	bomb(item);
-	 //    	// })
-		   
-		// }
+	  	mounted() {
+		    var cur = this;
+		    setInterval(timer, 1000);
+		    function timer() {
+		      cur.isClass = true;
+		      cur.count++;
+		      cur.isClass1 = true;
+		      cur.isClass2 = true;
+		      cur.t += 100;
+		      if (cur.t % 3 == 0) {
+		        cur.isClass = false;
+		        // cur.isClass1 = false;
+		        // cur.isClass2 = false;
+		   	  }
+		    }
+		    timer();
+		}
 	}
 </script>
 
