@@ -10,7 +10,7 @@ body{color: yellow}
 .whiteDay{width:2.8rem;height:1.28rem;position:absolute;bottom:3.466667rem;left:3.6rem;}
 /*.heart canvas{ width:4.066667rem;height:2.906667rem;background:#fff;position: absolute;left:2.2rem;top:2.1rem;}*/
 /*canvas{ background:#fff;position: absolute;top:5.23rem;left:3rem;z-index:20;}*/
-.heart canvas{width:6.146667rem;height:5.306667rem;position: absolute;top:1.15rem;left:1.15rem;}
+.heart canvas{width:6.146667rem;height:5.306667rem;position: absolute;top:1.15rem;left:1.15rem;background: url( "/static/images/images1/write.png")no-repeat;background-size: cover}
 .heart #draw{font-size:30px;color:#416f99;position: absolute;top:3.2rem;left:2rem;}
 .bottom{width:0.346667rem;height:0.48rem;position: absolute;bottom:0.413333rem;right:4.493333rem;}
 #btn{

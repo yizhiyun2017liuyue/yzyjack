@@ -1,5 +1,6 @@
 .aboutShow-page{position: absolute;top: 0;left: 0}
 .aboutShow-page,.aboutShow-page-top{width: 100%;height: 100%;}
+.aboutShow-page-top .aboutDragNameShow{width: 2rem;height:1.6rem;position: absolute;top: 50.18%;left: 3.093333rem;background-repeat: no-repeat;background-size:cover;z-index:-22;}
 .aboutShow-page .aboutShow-sudoku{width: 8.2rem;height: 9.88rem;position: absolute;top: 15.5%;left: 0.973333rem;background-repeat: no-repeat;background-size: 100% 100%;}
 .aboutShow-page .aboutShow-sudoku .about-sudoku-bg{width: 8.2rem;height: 9.88rem;position: absolute;top: 0;left: 0;z-index:-22;}
 .aboutShow-page .aboutShow-sudoku ul{width: 100%;height:0px;}	
@@ -7,6 +8,6 @@
 .aboutShow-page .aboutShow-text .aboutTextImg{width: 3.173333rem;height: 0.386667rem;position: absolute;top: 80.43%;left: 3.426667rem;}
 .aboutShow-page .aboutShow-text .aboutTextImgFour{width: 4.4rem;height: 0.826667rem;position: absolute;top: 79.35%;left: 2.933333rem;display: none}
 .aboutShow-page .aboutShow-text .aboutDownDrag{width:1.573333rem;height:0.386667rem;position: absolute;bottom: 7.462%;left:4.2rem;}
-.aboutShow-page .aboutShow-text .aboutTraLoding,.aboutShow-page .aboutShow-text .aboutTraLodingBottom{width: 0.386667rem;height: 0.44rem;position: absolute;bottom:1.658%;left: 4.8rem;animation-iteration-count: infinite;animation-duration:1s;animation-delay:0.1s}
-.aboutShow-page .aboutShow-text .aboutTraLodingBottom{animation-delay: 0.8s;}
+.aboutShow-page .aboutShow-text .aboutTraLoding,.aboutShow-page .aboutShow-text .aboutTraLodingBottom{width: 0.386667rem;height: 0.44rem;position: absolute;bottom:1.658%;left: 4.8rem;animation-iteration-count: infinite;animation-duration:1s;}
+/*.aboutShow-page .aboutShow-text .aboutTraLodingBottom{animation-delay: 1s;}*/
 .aboutShow-page .pullDownShow{width: 100%;height: 6.76rem;background: url('/static/images/sudoku/bg2_02.png') no-repeat;background-size: 100% 100%;}

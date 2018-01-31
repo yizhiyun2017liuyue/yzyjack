@@ -2,7 +2,7 @@
   <div id="app" ref="appContent">
   	<div class="app-bg" :style="height">
   		<!-- logo -->
-  		<img src="/static/images/home/logo.png" alt="logo" class="app-logo">
+  		<!-- <img src="/static/images/home/logo.png" alt="logo" class="app-logo"> -->
   		<!-- smallComponent -->
   		<img v-for="item in appimg" :src="item.message" alt="componentShow" :class='item.commonClass' :style="item.itemCss" :data-src="item.message" ref="changimg">
   		<router-view/>	
@@ -65,7 +65,7 @@ export default {
         } else { 
            return false; 
         }
-      }
+      },
   }
 
 }
