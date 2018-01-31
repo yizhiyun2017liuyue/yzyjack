@@ -8,9 +8,16 @@
     		<img src="/static/images/images1/font_he.png" alt="" class="he">
     		<img src="/static/images/images1/font_2.png" alt="" class="whiteDay">	
     	</div>
+    	<div class="up">
+    		<img src="/static/images/images1/s1.png" alt="" class="s1">
+			<img src="/static/images/images1/s2.png" alt="" class="s2">
+			<img src="/static/images/images1/s3.png" alt="" class="s3">
+    		<img src="/static/images/images1/s4.png" alt="" class="s4">
+    		<img src="/static/images/images1/s5.png" alt="" class="s5">
+    	</div>
     	 <img v-for="item in imgs" :src="item.message" alt="componentShow" :class='item.commonClass' :style="item.itemCss">   
-   	    <router-link to="/infordraghandle" class="btn">马上开启</router-link>
-   	    <!-- <input type="button" class="btn" value="马上开启"> -->
+   	    <!-- <router-link to="/infordraghandle" class="btn">马上开启</router-link> -->
+        <div class="btn" @click="next">马上开启</div>
 	</div>
 </template>
 <script>
@@ -34,12 +41,13 @@
 		      shake1: "shake1",
 		      shake2: "shake2",
 		      t: 0,
-		      count:0
+		      count:0,
+		      test:""
 		    };
   		},
 	  	mounted() {
 		    var cur = this;
-		    setInterval(timer, 1000);
+		    this.test = setInterval(timer, 1000);
 		    function timer() {
 		      cur.isClass = true;
 		      cur.count++;
@@ -53,6 +61,22 @@
 		   	  }
 		    }
 		    timer();
+		},
+		methods:{
+			next:function(){
+				clearInterval(this.test);
+				$(".content").removeClass("animted zoomIn shakeCir");
+				$(".content").addClass("magictime out");
+				$(".up .s1").addClass("magictime tinUpOut del");
+				$(".up .s2").addClass("magictime tinRightOut del");
+				$(".up .s3").addClass("magictime tinRightOut del");
+				$(".up .s4").addClass("magictime tinLeftOut del");
+				$(".up .s5").addClass("magictime tinDownOut del");
+				var _this = this;
+				setTimeout(function(){
+					_this.$router.push({name: 'infordraghandle'});
+				},1300)
+        	} 
 		}
 	}
 </script>
@@ -60,9 +84,11 @@
 <style lang="css" scoped>
 	@import "../assets/css/information.css";
 	@import "../../static/css/animate.css";
+	@import "../../static/css/magic.css";
 	.delay1{animation-delay:0.2s;}
 	.delay2{animation-delay:0.4s;}
 	.delay3{animation-delay:0.6s;}
 	.delay4{animation-delay:0.8s;}
 	.delay5{animation-delay:1s;}
+	.del{animation-duration:1s;animation-delay:1s;}
 </style>

@@ -125,25 +125,25 @@ a{text-decoration: none;}
       transform: translate(0, 0) rotate(0); }
    
     20% {
-      transform: translate(0, 0.03rem) rotate(0); }
+      transform: translate(0, 0.02rem) rotate(0); }
    
     30% {
       transform: translate(0, 0) rotate(0); }
    
     40% {
-      transform: translate(0, 0.03rem) rotate(0); }
+      transform: translate(0, 0.02rem) rotate(0); }
    
     50% {
       transform: translate(0, 0) rotate(0); }
     
     60% {
-      transform: translate(0, 0.03rem) rotate(0); }
+      transform: translate(0, 0.02rem) rotate(0); }
     
     70% {
       transform: translate(0, 0) rotate(0); }
    
     80% {
-      transform: translate(0, 0.03rem) rotate(0); }
+      transform: translate(0, 0.02rem) rotate(0); }
    
     90% {
       transform: translate(0, 0) rotate(0); }
@@ -159,32 +159,32 @@ a{text-decoration: none;}
     animation-delay:900ms;
 }
 @keyframes shakeRed{
-     10% {
-      transform: translate(-0.03rem, 0) rotate(0); }
+    10% {
+      transform: translate(-0.02rem, 0) rotate(0); }
    
     20% {
       transform: translate(0, 0) rotate(0); }
    
     30% {
-      transform: translate(-0.03rem, 0) rotate(0); }
+      transform: translate(-0.02rem, 0) rotate(0); }
    
     40% {
       transform: translate(0, 0) rotate(0); }
    
     50% {
-      transform: translate(-0.03rem, 0) rotate(0); }
+      transform: translate(-0.02rem, 0) rotate(0); }
     
     60% {
       transform: translate(0, 0) rotate(0); }
     
     70% {
-      transform: translate(-0.03rem, 0) rotate(0); }
+      transform: translate(-0.02rem, 0) rotate(0); }
    
     80% {
       transform: translate(0, 0) rotate(0); }
    
     90% {
-      transform: translate(-0.03rem, 0) rotate(0); }
+      transform: translate(-0.02rem, 0) rotate(0); }
    
       0%, 100% {
       transform: translate(0, 0) rotate(0); } 
@@ -226,7 +226,7 @@ a{text-decoration: none;}
     /*-webkit-animation-iteration-count: 1; /*动画次数  */*/
   -webkit-animation-delay: 2s; /*延迟时间*/  
 }
-@-webkit-keyframes fadeIn {  
+@keyframes fadeIn {  
     0% {  
     	opacity: 0; /*初始状态 透明度为0*/  
     }  
@@ -243,3 +243,26 @@ a{text-decoration: none;}
         opacity: 1; /*结尾状态 透明度为1*/  
     }  
 }  
+.up{position: absolute;z-index:20;}
+.up img{position: absolute;opacity:0;}
+.s1{width:0.6rem;height:0.533333rem;top:6.5rem;left:4rem;}
+.s2{width:0.213333rem;height:0.16rem;top:7rem;left:5.5rem;}
+.s3{width:0.573333rem;height:0.84rem;top:7.2rem;left:5rem;}
+.s4{width:0.44rem;height:0.36rem;top:7.4rem;left:3.5rem;}
+.s5{width:0.346667rem;height:0.48rem;top:6.8rem;left:4.85rem;}
+
+@keyframes out{
+    0%{
+       transform: scale(1,1);
+       opacity:1;
+    }
+    100%{
+      transform: scale(1.25,1.25);
+      opacity: 0;
+    }
+}
+.out{
+    animation-name: out;
+    animation-duration:2s;
+    animation-fill-mode:both;
+}
