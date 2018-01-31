@@ -14,6 +14,11 @@
 			<img src="/static/images/images1/s3.png" alt="" class="s3">
     		<img src="/static/images/images1/s4.png" alt="" class="s4">
     		<img src="/static/images/images1/s5.png" alt="" class="s5">
+    		<img src="/static/images/images1/s1.png" alt="" class="s6">
+			<img src="/static/images/images1/s2.png" alt="" class="s7">
+			<img src="/static/images/images1/s3.png" alt="" class="s8">
+    		<img src="/static/images/images1/s4.png" alt="" class="s9">
+    		<img src="/static/images/images1/s5.png" alt="" class="s10">
     	</div>
     	 <img v-for="item in imgs" :src="item.message" alt="componentShow" :class='item.commonClass' :style="item.itemCss">   
    	    <!-- <router-link to="/infordraghandle" class="btn">马上开启</router-link> -->
@@ -72,6 +77,11 @@
 				$(".up .s3").addClass("magictime tinRightOut del");
 				$(".up .s4").addClass("magictime tinLeftOut del");
 				$(".up .s5").addClass("magictime tinDownOut del");
+				$(".up .s6").addClass("magictime tinDownOut del");
+				$(".up .s7").addClass("magictime tinLeftOut del");
+				$(".up .s8").addClass("magictime tinLeftOut del");
+				$(".up .s9").addClass("magictime tinRightOut del");
+				$(".up .s10").addClass("magictime tinUpOut del");
 				var _this = this;
 				setTimeout(function(){
 					_this.$router.push({name: 'infordraghandle'});
@@ -90,5 +100,5 @@
 	.delay3{animation-delay:0.6s;}
 	.delay4{animation-delay:0.8s;}
 	.delay5{animation-delay:1s;}
-	.del{animation-duration:1s;animation-delay:1s;}
+	.del{animation-duration:0.5s;animation-delay:0.7s;}
 </style>

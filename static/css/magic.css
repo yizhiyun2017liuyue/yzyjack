@@ -1045,11 +1045,13 @@ Copyright (c) 2016 Christian Pucci
 @keyframes tinDownOut {
   0%{
     opacity: 1;
-    transform: scale(1, 1) translateY(0) rotate(0deg);
+    /*transform: scale(1, 1) translateY(0);*/
+    transform: scale(1, 1) translate(0,0);
   }
   100% {
     opacity: 0;
-    transform: scale(1, 1) translateY(900%) rotate(135deg);
+    /*transform: scale(1, 1) translateY(900%);*/
+    transform: scale(1, 1) translate(900%,900%);
   }
 }
 .tinLeftIn {
@@ -1077,12 +1079,16 @@ Copyright (c) 2016 Christian Pucci
 @keyframes tinLeftOut {
   0%{
     opacity: 1;
-    transform: scale(1, 1) translateX(0) rotate(0deg);
+    /*transform: scale(1, 1) translateX(0);*/
+    transform: scale(1, 1) translate(0,0);
+
   }
 
   100% {
     opacity: 0;
-    transform: scale(1, 1) translateX(-900%) rotate(-135deg);
+    /*transform: scale(1, 1) translateX(-900%);*/
+    transform: scale(1, 1) translate(-900%,900%);
+
   }
 }
 .tinRightIn {
@@ -1110,12 +1116,15 @@ Copyright (c) 2016 Christian Pucci
 @keyframes tinRightOut {
   0%{
     opacity: 1;
-    transform: scale(1, 1) translateX(0) rotate(0deg);
+    /*transform: scale(1, 1) translateX(0);*/
+    transform: scale(1, 1) translate(0,0);
+
   }
 
   100% {
     opacity: 0;
-    transform: scale(1, 1) translateX(900%) rotate(45deg);
+    /*transform: scale(1, 1) translateX(900%);*/
+    transform: scale(1, 1) translate(900%,-900%);
   }
 }
 .tinUpIn {
@@ -1143,12 +1152,15 @@ Copyright (c) 2016 Christian Pucci
 @keyframes tinUpOut {
   0%{
     opacity: 1;
-    transform: scale(1, 1) translateY(0) rotate(0deg);
+    /*transform: scale(1, 1) translateY(0);*/
+    transform: scale(1, 1) translate(0,0);
+
   }
 
 
   100% {
     opacity: 0;
-    transform: scale(1, 1) translateY(-900%) rotate(-45deg);
+    /*transform: scale(1, 1) translateY(-900%);*/
+    transform: scale(1, 1) translate(-900%,-900%);
   }
 }

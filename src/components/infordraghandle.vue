@@ -81,11 +81,11 @@ export default {
 <style lang="css" scoped>
 	@import "../assets/css/infordraghandle.css";
   @import "../../static/css/animate.css";
-  .delay1{animation-duration:3s;}
-  .delay2{animation-duration:3s;}
-  .delay3{animation-duration:2s;animation-delay:1.2s;}
-  .delay4{animation-duration:3s;}
-  .delay5{animation-duration:3s;}
-  .delay6{animation-duration:3s;}
-  .delay7{animation-duration:3s;animation-delay:0.5s;}
+  .delay1{animation-duration:1s;}
+  .delay2{animation-duration:1s;}
+  .delay3{animation-duration:2s;animation-delay:0.5s;}
+  .delay4{animation-duration:1s;}
+  .delay5{animation-duration:1s;}
+  .delay6{animation-duration:1s;}
+  .delay7{animation-duration:1s;animation-delay:0.3s;}
 </style>

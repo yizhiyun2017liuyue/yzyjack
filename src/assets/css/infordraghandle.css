@@ -101,6 +101,6 @@ a{text-decoration: none;}
 	animation-duration:100ms;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1;
-	animation-delay:100ms;
+	/*animation-delay:5ms;*/
 	animation-fill-mode: both;
 }
