@@ -3,7 +3,7 @@
         <img v-for="item in imgs" :src="item.message" alt="componentShow" :class='item.commonClass' :style="item.itemCss"> 
         <div class="heart animated zoomIn delay3" id="cir">
           <img src="/static/images/images1/ENTER2.png" alt="" class="enter">
-          <canvas id="canvas" width="461" height="398"></canvas>
+          <canvas id="canvas"></canvas>
           <p id="draw">画下关于你的MR.RIGHT</p>
         </div>
         <!-- <canvas id="canvas" width="305" height="218" class="animated zoomIn delay10"></canvas> -->
@@ -27,7 +27,11 @@ export default {
             {message:"/static/images/images1/s3.png",commonClass:"rightBottom active delay5",itemClass:""},
             {message:"/static/images/images1/s5.png",commonClass:"bottom active delay6",itemClass:""},
           ],
-          aboutSrc:""
+          aboutSrc:"",
+          ceshi:"",
+          ceshi1:"",
+          ceshi2:"",
+
       }
     },
   	mounted(){
@@ -35,26 +39,29 @@ export default {
         var draw = document.getElementById("draw");
   		  var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
-        var image = new Image();
-        image.src = "/static/images/images1/write.png";
-        image.onload = function(){
-            ctx.drawImage(image,0,0);
-        }
 
-        ctx.lineWidth = 5;
-        document.querySelector('body').addEventListener('touchstart', function (ev) {
-            event.preventDefault();
-        });
+        // ctx.font = "15px Arial";
+        // ctx.fillStyle = 'blue';
+        // ctx.fillText("画下关于你的MR.RIGHT",70,70);
+        //给定canvas宽高
+        var inforClientWidth = document.documentElement.clientWidth; 
+        var inforClientHeight = document.documentElement.clientHeight;
+ 
+        canvas.width = Math.floor(inforClientWidth*461/750*window.devicePixelRatio);
+        canvas.height = Math.floor(inforClientHeight*398/1334*window.devicePixelRatio);
+        var ctrl = this;
+        ctx.lineWidth = 1*window.devicePixelRatio;
+        ctx.scale(window.devicePixelRatio,window.devicePixelRatio)
+
         canvas.addEventListener('touchstart',function(event){   //触摸点按下事件
-            // event.preventDefault();
             draw.style.display = "none";
-            if (event.targetTouches.length == 1) {         
+            if (event.targetTouches.length == 1) {
                 var touch = event.targetTouches[0];
                 ctx.beginPath();
-                ctx.moveTo(touch.clientX-canvas.offsetLeft-cir.offsetLeft,touch.clientY-canvas.offsetTop-cir.offsetTop);
+                ctx.moveTo(touch.clientX-canvas.getBoundingClientRect().left,touch.clientY-canvas.getBoundingClientRect().top);
                 canvas.addEventListener('touchmove',function (event) {  //手机拖动触摸点事件
                     var touche = event.targetTouches[0];
-                    ctx.lineTo(touche.clientX - canvas.offsetLeft-cir.offsetLeft, touche.clientY - canvas.offsetTop-cir.offsetTop);
+                    ctx.lineTo(touche.clientX - canvas.getBoundingClientRect().left, touche.clientY - canvas.getBoundingClientRect().top);
                     ctx.stroke();
                 },false)
                 canvas.addEventListener('touchend',function (event) {  //手机离开屏幕的事件
@@ -65,7 +72,7 @@ export default {
     },
     methods:{
         save:function(){
-            this.$router.push({name: 'aboutShow',params:{id:canvas.toDataURL("image/png")}});
+            this.$router.push({name: 'aboutShow',params:{aboutSrc:canvas.toDataURL("image/png")}});
         } 
     }
 }

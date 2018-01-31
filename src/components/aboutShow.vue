@@ -4,23 +4,27 @@
         <div class="aboutShow-page-top">
             <!-- 小部件 -->
             <div class="aboutShow-small-component">
-                <img v-for="item in aboutimg" :src="item.message" alt="componentShow" :class="item.commonClass" :style="item.itemCss">
+                <img v-for="item in aboutimg" :src="item.message" alt="componentShow" :class="item.commonClass" :style="item.itemCss" onclick="return false">
             </div>
             <!-- 九宫格 -->
             <div class="aboutShow-sudoku animated zoomIn">
-                <img :src="aboutBgSrc" alt="loveLetter" class="about-sudoku-bg">
+                <img :src="aboutBgSrc" alt="loveLetter" class="about-sudoku-bg" onclick="return false">
               <ul>
                 <li v-for="sudoku in sudokuAll" :style="sudoku" @touchstart.stop="clickRotate($event)"></li>
               </ul>
+              <!-- 绘制的名字展示 -->
+              <div class="aboutDragNameShow" :style="{backgroundImage:'url('+aboutDragImgSrc+')'}">
+                
+              </div>
             </div>
             <!-- 文字描述 -->
             <div class="aboutShow-text">
-                <img :src="aboutShowTextImage" alt="filterShow" class="aboutTextImg" ref="pageThree">
-                <img src="/static/images/sudoku/font4.png" alt="filterShow" class="aboutTextImgFour" ref="pageFour">
-                <img src="/static/images/sudoku/downdrag.png" alt="downdrag" class="aboutDownDrag">
+                <img :src="aboutShowTextImage" alt="filterShow" class="aboutTextImg" ref="pageThree" onclick="return false">
+                <img src="/static/images/sudoku/font4.png" alt="filterShow" class="aboutTextImgFour" ref="pageFour" onclick="return false">
+                <img src="/static/images/sudoku/downdrag.png" alt="downdrag" class="aboutDownDrag" onclick="return false">
                 <div class="aboutTraLodingContent">
-                    <img src="/static/images/sudoku/xiala_s_03.png" alt="traloding" class="aboutTraLoding animated fadeInDown">
-                    <img src="/static/images/sudoku/xiala_x_03.png" alt="traloding" class="aboutTraLodingBottom animated fadeInDown">
+                    <img src="/static/images/sudoku/xiala_s_03.png" alt="traloding" class="aboutTraLoding animated fadeInDown" onclick="return false">
+                    <img src="/static/images/sudoku/xiala_x_03.png" alt="traloding" class="aboutTraLodingBottom animated fadeInDown" onclick="return false">
                 </div>
             </div> 
           </div>
@@ -38,7 +42,7 @@ export default {
   created:function(){
         var saveBgSrc = ["/static/images/sudoku/x1_03.png","/static/images/sudoku/x2_03.png","/static/images/sudoku/x3_03.png","/static/images/sudoku/x4_03.png","/static/images/sudoku/x5_03.png"];
         this.aboutBgSrc = saveBgSrc[Math.floor(Math.random() * saveBgSrc.length)];
-        console.log(this.$route)
+       this.aboutDragImgSrc = this.$route.params.aboutSrc;
   },
   data () {
     return {
@@ -62,6 +66,7 @@ export default {
           {backgroundImage:'url(/static/images/sudoku/p9.png)',width:"2.746667rem",height:"4.16rem",top:"-24.67rem",left:"5.46rem"},
         ],
         aboutCount:0,
+        aboutDragImgSrc:""
     }
   },
     methods:{
