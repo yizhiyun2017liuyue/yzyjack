@@ -45,14 +45,13 @@ export default {
         //给定canvas宽高
         var inforClientWidth = document.documentElement.clientWidth; 
         var inforClientHeight = document.documentElement.clientHeight;
-
+ 
         canvas.width = Math.floor(inforClientWidth*461/750*window.devicePixelRatio);
         canvas.height = Math.floor(inforClientHeight*398/1334*window.devicePixelRatio);
         var ctrl = this;
         ctx.lineWidth = 1*window.devicePixelRatio;
         ctx.scale(window.devicePixelRatio,window.devicePixelRatio)
         canvas.addEventListener('touchstart',function(event){   //触摸点按下事件
-            
             draw.style.display = "none";
             if (event.targetTouches.length == 1) {
                 var touch = event.targetTouches[0];
