@@ -79,7 +79,7 @@ export default {
         var randomAnimate = ["rotateOutUpLeft","rotateOutUpRight","rotateOutDownLeft","rotateOutDownRight","rotateOut"];
         $(ele.target).addClass("animated "+randomAnimate[Math.floor(Math.random() * randomAnimate.length)]+"").css("zIndex","0");
         ctrl.aboutCount++;
-        $(ele.target).one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animatio nend",function(){
+        $(ele.target).one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",function(){
           $(ele.target).removeClass().css("visibility","hidden");
         })
       },

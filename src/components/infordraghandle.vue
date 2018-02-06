@@ -1,13 +1,15 @@
 <template>
+    <!-- 页面二 -->
     <div id="pageTwo"> 
-        <img v-for="item in imgs" :src="item.message" alt="componentShow" :class='item.commonClass' :style="item.itemCss"> 
-        <div class="heart animated zoomIn delay3" id="cir">
-          <img src="/static/images/images1/ENTER2.png" alt="" class="enter">
-          <canvas id="canvas"></canvas>
-          <p id="draw">画下关于你的MR.RIGHT</p>
+        <!-- 爆炸碎片 -->
+        <img v-for="item in bombImgs" :src="item.message" alt="componentShow" :class='item.commonClass' :style="item.itemCss" onclick="return false"> 
+        <!-- 心形区域 -->
+        <div class="heart animated zoomIn" id="cir">
+            <img src="/static/images/images1/ENTER2.png" alt="" class="enter" onclick="return false">
+            <canvas id="canvas"></canvas>
+            <p id="draw">画下关于你的MR.RIGHT</p>
         </div>
-        <!-- <canvas id="canvas" width="305" height="218" class="animated zoomIn delay10"></canvas> -->
-        <div id="btn" @click="save">完成</div>
+        <div id="btn" @click="finish">完成</div>
         <!-- <router-link to="/aboutShow" id="btn">完成</router-link> -->
 	</div>  
 </template>
@@ -17,15 +19,14 @@ export default {
   	name: 'infordraghandle',
     data(){
       return {
-          imgs:[
-            {message:"/static/images/images1/s1.png",commonClass:"leftTop active delay1",itemClass:""},
-            {message:"/static/images/images1/s2.png",commonClass:"rightTop active delay2",itemClass:""},
-            {message:"/static/images/images1/ENTER.png",commonClass:"heart animated zoomIn delay3",itemClass:""},
-            {message:"/static/images/images1/pink_triangle.png",commonClass:"pinkTri",itemClass:""},
-            {message:"/static/images/images1/font_2.png",commonClass:"whiteDay animated zoomIn delay7",itemClass:""},
-            {message:"/static/images/images1/s4.png",commonClass:"leftBottom active delay4",itemClass:""},
-            {message:"/static/images/images1/s3.png",commonClass:"rightBottom active delay5",itemClass:""},
-            {message:"/static/images/images1/s5.png",commonClass:"bottom active delay6",itemClass:""},
+          bombImgs:[
+            {message:"/static/images/images1/s1.png",commonClass:"active",itemCss:"width:0.6rem;height:0.533333rem;position:absolute;top:1.533333rem;left:2.666667rem;"},
+            {message:"/static/images/images1/s2.png",commonClass:"active",itemCss:"width:0.213333rem;height:0.16rem;position: absolute;top:2.826667rem;right:1.866667rem;"},
+            {message:"/static/images/images1/pink_triangle.png",commonClass:"",itemCss:"width:1.64rem;height:1.64rem;position: absolute;right:1.36rem;top:8.8rem;"},
+            {message:"/static/images/images1/font_2.png",commonClass:"animated zoomIn delay2",itemCss:"width:2.8rem;height:1.28rem;position:absolute;bottom:3.466667rem;left:3.6rem;"},
+            {message:"/static/images/images1/s4.png",commonClass:"active",itemCss:"width:0.44rem;height:0.36rem;position:absolute;left:1.306667rem;bottom:3.493333rem;"},
+            {message:"/static/images/images1/s3.png",commonClass:"active",itemCss:"width:0.573333rem;height:0.84rem;position: absolute;right:1.866667rem;bottom:4.253333rem;"},
+            {message:"/static/images/images1/s5.png",commonClass:"active",itemCss:"width:0.346667rem;height:0.48rem;position: absolute;bottom:0.413333rem;right:4.493333rem;"},
           ],
           aboutSrc:"",
           ceshi:"",
@@ -37,23 +38,20 @@ export default {
   	mounted(){
         var cir = document.getElementById("cir");
         var draw = document.getElementById("draw");
-  		  var canvas = document.getElementById("canvas");
+  		var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
 
-        // ctx.font = "15px Arial";
-        // ctx.fillStyle = 'blue';
-        // ctx.fillText("画下关于你的MR.RIGHT",70,70);
         //给定canvas宽高
         var inforClientWidth = document.documentElement.clientWidth; 
         var inforClientHeight = document.documentElement.clientHeight;
- 
+  
         canvas.width = Math.floor(inforClientWidth*461/750*window.devicePixelRatio);
         canvas.height = Math.floor(inforClientHeight*398/1334*window.devicePixelRatio);
         var ctrl = this;
         ctx.lineWidth = 1*window.devicePixelRatio;
-        ctx.scale(window.devicePixelRatio,window.devicePixelRatio)
-
+        ctx.scale(window.devicePixelRatio,window.devicePixelRatio);
         canvas.addEventListener('touchstart',function(event){   //触摸点按下事件
+            event.preventDefault();
             draw.style.display = "none";
             if (event.targetTouches.length == 1) {
                 var touch = event.targetTouches[0];
@@ -71,7 +69,7 @@ export default {
         },false)
     },
     methods:{
-        save:function(){
+        finish:function(){
             this.$router.push({name: 'aboutShow',params:{aboutSrc:canvas.toDataURL("image/png")}});
         } 
     }
@@ -81,11 +79,4 @@ export default {
 <style lang="css" scoped>
 	@import "../assets/css/infordraghandle.css";
   @import "../../static/css/animate.css";
-  .delay1{animation-duration:1s;}
-  .delay2{animation-duration:1s;}
-  .delay3{animation-duration:2s;animation-delay:0.5s;}
-  .delay4{animation-duration:1s;}
-  .delay5{animation-duration:1s;}
-  .delay6{animation-duration:1s;}
-  .delay7{animation-duration:1s;animation-delay:0.3s;}
 </style>

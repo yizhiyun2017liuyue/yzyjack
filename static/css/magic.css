@@ -5,9 +5,10 @@ Licensed under the MIT license
 Copyright (c) 2016 Christian Pucci
 */
 .magictime {
-    animation-duration: 1.3s;
+    animation-duration:0.5s;
     /*animation-fill-mode: both;*/
     animation-iteration-count: 1;
+    animation-delay:0.6s;
 }
 
 .puffIn {

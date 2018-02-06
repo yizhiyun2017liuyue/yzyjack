@@ -1,54 +1,11 @@
 body{color: yellow}
 a{text-decoration: none;}
-.leftTop{width:0.6rem;height:0.533333rem;position:absolute;top:1.533333rem;left:2.666667rem;}
-.rightTop{width:0.213333rem;height:0.16rem;position: absolute;top:2.826667rem;right:1.866667rem;}
 .heart{width:8.453333rem;height:7.32rem;position:absolute;left:0.773333rem;top:3.146667rem;z-index:10;text-align:center;}
 .heart .enter{width:100%;height:100%;}
-.leftBottom{width:0.44rem;height:0.36rem;position:absolute;left:1.306667rem;bottom:3.493333rem;}
-.rightBottom{width:0.573333rem;height:0.84rem;position: absolute;right:1.866667rem;bottom:4.253333rem;}
-.pinkTri{width:1.64rem;height:1.64rem;position: absolute;right:1.36rem;top:8.8rem;}
-.whiteDay{width:2.8rem;height:1.28rem;position:absolute;bottom:3.466667rem;left:3.6rem;}
-/*.heart canvas{ width:4.066667rem;height:2.906667rem;background:#fff;position: absolute;left:2.2rem;top:2.1rem;}*/
-/*canvas{ background:#fff;position: absolute;top:5.23rem;left:3rem;z-index:20;}*/
 .heart canvas{width:6.146667rem;height:5.306667rem;position: absolute;top:1.15rem;left:1.15rem;background: url( "/static/images/images1/write.png")no-repeat;background-size: cover}
-.heart #draw{font-size:30px;color:#416f99;position: absolute;top:3.2rem;left:2rem;}
+.heart #draw{font-size:0.4rem;color:#416f99;position: absolute;top:3.2rem;left:2rem;}
 .bottom{width:0.346667rem;height:0.48rem;position: absolute;bottom:0.413333rem;right:4.493333rem;}
-#btn{
-	width:3.2rem;
-	height:1.013333rem;
-	line-height:1.066667rem;
-    border-radius:0.023333rem;
-	text-align:center;
-	color:white;
-	background:#d50211;
-	font-size:0.4rem;
-	position: absolute; 
-	bottom:1.6rem;
-	left:3.4rem;
-  z-index:20;  
-    /*调用动画效果*/  
-  -webkit-animation-name: fadeIn; /*动画名称*/  
-  -webkit-animation-duration: 5s; /*动画持续时间*/  
-    /*-webkit-animation-iteration-count: 1; /*动画次数  */*/
-  -webkit-animation-delay: 2s; /*延迟时间*/  
-}
-@keyframes fadeIn {  
-    0% {  
-    	opacity: 0; /*初始状态 透明度为0*/  
-    }  
-    20%{  
-        opacity: .2;  
-    }  
-    50% {  
-        opacity: .5; /*中间状态 透明度为0.5*/  
-    }  
-    70%{  
-        opacity: .7;  
-    }  
-    100% {  
-        opacity: 1; /*结尾状态 透明度为1*/  
-    }  
-}  
+#btn{width:3.2rem;height:1.013333rem;line-height:1.066667rem;border-radius:0.023333rem;text-align:center;color:white;background:#d50211;font-size:0.4rem;position: absolute; bottom:1.6rem;left:3.4rem;z-index:20;  animation-name: fadeIn; animation-duration: 5s;/*-webkit-animation-iteration-count: 1; /*动画次数  */*/animation-delay: 2s;  } 
 @keyframes action{
 	0%{
 		opacity: 0;
@@ -98,9 +55,11 @@ a{text-decoration: none;}
 }
 .active{
 	animation-name:action;
-	animation-duration:100ms;
+	animation-duration:1.5s;
 	animation-timing-function: ease-in-out;
 	animation-iteration-count: 1;
-	/*animation-delay:5ms;*/
 	animation-fill-mode: both;
 }
+
+/*元素动画*/
+.delay2{animation-duration:1.5s;animation-delay:0.2s;}
